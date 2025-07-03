@@ -1,67 +1,69 @@
-# Java Two-Way Socket Communication
+# Java Socket-Based Two-Way Communication
 
-This is a simple Java-based client-server chat application demonstrating **two-way communication** using TCP sockets.
+This project demonstrates a simple two-way communication system between a client and a server using TCP sockets in Java.
 
-## 📌 Features
+## Overview
 
-- Bi-directional (two-way) message exchange between client and server
-- Console-based user interface
-- Graceful shutdown with `'q'` command
-- Demonstrates core Java networking concepts
+The application allows a server and a client to communicate through a TCP connection using console input. It showcases Java's networking capabilities through blocking I/O with `Socket` and `ServerSocket`.
 
-## 🛠 Technologies Used
+## Features
 
-- Java (Standard Edition)
-- TCP Sockets
-- Input/Output Streams
-- BufferedReader & PrintWriter
+- Two-way communication using TCP
+- Console-based message exchange
+- Clean shutdown with `q` command
+- Demonstrates basic socket programming concepts
 
-## 📁 Project Structure
+## Requirements
 
-.
-├── Client.java
-└── Server.java
+- Java Development Kit (JDK) 8 or higher
+- Terminal or command-line environment
 
-markdown
+## Project Structure
+|---client.java
+
+|---server.java
+
+shell
 Copy
 Edit
 
-## 🚀 How to Run the Project
+## Compilation and Execution
 
-1. **Compile the Java files**
+### 1. Compile the Java source files
 
-   ```bash
-   javac Server.java
-   javac Client.java
-Start the Server
-
-bash
-Copy
-Edit
+```bash
+javac Server.java
+javac Client.java
+```
+2. Start the server (in the first terminal)
+```bash
 java Server
-Start the Client (in a separate terminal or machine)
-
-bash
-Copy
-Edit
+```
+3. Start the client (in the second terminal or on a different machine)
+```bash
 java Client
-💬 Chat Usage
-After both client and server are running, start typing messages.
+```
+Usage
+Both the server and the client can type and send messages.
 
-Either side can type q to quit and terminate the connection.
+Enter `q` to terminate the session from either side.
 
-Example Session:
+Example Interaction
+
 Client terminal:
 
-arduino
-Copy
-Edit
-you : Hello Server!
-server says : Hello Client!
+```bash
+you : Hello Server
+server says : Hello Client
 Server terminal:
+```
 
-arduino
-Copy
-Edit
-client says : Hello Server!
-you : Hello Client!
+```
+client says : Hello Server
+you : Hello Client
+```
+
+Port and Network Notes
+The server listens on TCP port 5000.
+
+Ensure this port is not blocked by firewalls if using multiple machines.
